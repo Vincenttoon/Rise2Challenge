@@ -1,0 +1,27 @@
+{
+  "name": "rise2challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayWhiteBuffalo/Rise2Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayWhiteBuffalo/Rise2Challenge/issues"
+  },
+  "homepage": "https://github.com/JayWhiteBuffalo/Rise2Challenge#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.2.0"
+  }
+}
