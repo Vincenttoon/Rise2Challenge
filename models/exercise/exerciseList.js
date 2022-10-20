@@ -3,10 +3,10 @@ const { FOREIGNKEYS } = require('sequelize/types/query-types');
 const sequelize = require('../../config/connection');
 
 //Create our Exercise model
-class Exercise extends Model {}
+class ExerciseList extends Model {}
 
 //Create fields/columns for Exercise model
-Excercise.init(
+ExcerciseList.init(
     {
     id: {
         type: DataTypes.INTEGER,
@@ -36,8 +36,8 @@ Excercise.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'exercise'
+    modelName: 'exerciseList'
 }
 );
 
-module.exports = Exercise;
+module.exports = ExerciseList;

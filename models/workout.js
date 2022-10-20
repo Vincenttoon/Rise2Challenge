@@ -26,7 +26,7 @@ Workout.init(
     },
 },
 {
-    //connect exercise here
+    //connect exerciseList here
     sequelize,
     timestamps: false,
     freezeTableName: true,

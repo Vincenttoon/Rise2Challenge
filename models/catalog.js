@@ -30,7 +30,6 @@ Catalog.init(
     }
 },
 {
-    //connect exercise here
     sequelize,
     timestamps: false,
     freezeTableName: true,
