@@ -5,6 +5,9 @@
     --fourth: #B1BED5;
     --dark: #1D13AD;
     --dark-green: #026700;
+    --grey: #696969;
+    --gold: #D9C407;
+    --bronze: #B87200;
 }
 
 body {
@@ -81,4 +84,63 @@ footer {
 
 .login-btn {
     width: 20%
+}
+
+.logout-btn {
+    margin-right: 7px;
+    margin-top: 6px;
+    font-size: 20px;
+    background-color: #B1BED5;
+    color:#1D13AD;
+}
+
+.side-bar {
+    background-color: #BFD8D5;
+    height: 100%;
+}
+
+.side-bar-head {
+    text-decoration: underline;
+    color:#696969;
+    font-size: 20px;
+    padding:20px;
+}
+
+.side-bar-sub-head {
+    text-decoration: underline;
+    color:#696969;
+    padding:10px;
+}
+
+.dropdown-btn {
+    background-color: #1D13AD;
+    color: #BFD8D5;
+    text-decoration: none;
+    width: 150px;
+    margin: 10px;
+}
+
+.dropdown-btn:hover {
+    background-color: #026700;
+}
+
+.results-cont {
+    background-color: #DFDFDF;
+}
+
+.result-head {
+    margin-top: 20px;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.result-return {
+    background-color: #B1BED5;
+    border-style: solid;
+    border-color: #026700;
+    margin-bottom: 30px;
+}
+
+.return-text {
+    margin-top: 12px;
 }
