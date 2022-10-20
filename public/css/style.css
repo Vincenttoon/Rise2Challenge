@@ -1,0 +1,76 @@
+:root {
+    --primary: #F4F3F3;
+    --secondary: #DFDFDF;
+    --third: #BFD8D5;
+    --fourth: #B1BED5;
+    --dark: #1D13AD;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+header {
+    background-color: var(--fourth);
+}
+
+h1 {
+    color: var(--third);
+    font-style: italic;
+}
+
+a {
+    color:#1D13AD;
+}
+
+button {
+    padding: 5px;
+}
+
+footer {
+    background-color: #B1BED5;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-a {
+    color:#1D13AD;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.btn {
+    background-color: #BFD8D5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #1D13AD;
+    color: #F4F3F3;
+}
+
+.input-div {
+    padding: 2%;
+}
+
+.input-title {
+    background-color: #BFD8D5;
+}
+
+.input-field {
+    background-color: rgb(177, 190, 213, 0.5);
+}
+
+.footer-div {
+    font-size: 15px;
+}
+
+.footer-p {
+    margin-bottom: 1%;
+}
+
+.footer-nav {
+    font-size: 18px;
+}
