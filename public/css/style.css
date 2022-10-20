@@ -4,6 +4,7 @@
     --third: #BFD8D5;
     --fourth: #B1BED5;
     --dark: #1D13AD;
+    --dark-green: #026700;
 }
 
 body {
@@ -15,12 +16,16 @@ header {
 }
 
 h1 {
-    color: var(--third);
+    color: var(--dark);
     font-style: italic;
 }
 
 a {
     color:#1D13AD;
+}
+
+a:hover {
+    color:#026700;
 }
 
 button {
@@ -35,7 +40,6 @@ footer {
 }
 
 .nav-a {
-    color:#1D13AD;
     margin-right: 10px;
     font-size: 20px;
 }
@@ -73,4 +77,8 @@ footer {
 
 .footer-nav {
     font-size: 18px;
+}
+
+.login-btn {
+    width: 20%
 }
