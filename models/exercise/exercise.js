@@ -6,7 +6,7 @@ const sequelize = require('../../config/connection');
 class Exercise extends Model {}
 
 //Create fields/columns for Exercise model
-Excercise.init(
+Exercise.init(
     {
     id: {
         type: DataTypes.INTEGER,

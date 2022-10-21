@@ -20,13 +20,17 @@ Workout.init(
         key:'id'
       }
     },
+    exercise_list: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-},
+  },
+
 {
-    //connect exercise here
     sequelize,
     timestamps: false,
     freezeTableName: true,
