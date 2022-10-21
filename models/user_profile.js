@@ -20,11 +20,25 @@ User_profile.init(
         key:'id'
       }
     },
+    workout_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        mode: 'workout',
+        key: 'id'
+      }
+    },
     age: {
       type: DataTypes.INTEGER,
+      validate : {
+        isNumeric: true,
+      }
     },
     gender: {
       type: DataTypes.CHAR(10),
+      validate: {
+        isAlpha: true,
+      }
     },
     height: {
       type: DataTypes.STRING,

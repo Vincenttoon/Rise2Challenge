@@ -26,12 +26,10 @@ Workout.init(
     },
     //Getting STRING with a FUNCTION to find choosen EXERCISES
     //and sending to this excerciseList Attribute as an ARRAY
-    excerciseList: {
+    excercise_id: {
       type: DataTypes.ARRAY,
-      allowNull: false,
-      //Not sure about this part
       references: {
-        model: 'exerciseList',
+        model: 'exercise',
         key: 'id'
       }
     }

@@ -1,52 +1,48 @@
 const User = require('./User');
-const user_dashboard = require('./user_dashboard');
+const user_profile = require('./user_profile');
 const workout = require('./workout');
-const catalog = require('./catalog');
-const exerciseList = require('./exercise/exerciseList');
-const base = require('./exercise/base');
-const category = require('./exercise/category');
-const muscle = require('./exercise/muscle');
+const exercise = require('./exercise');
 
-//Create associations
-//******** User Associations *********//
-User.hasOne(catalog, {
-    foreignKey: 'user_id'
-});
 
+//******** Associations *********//
 User.hasMany(workout, {
     foreignkey: 'user_id'
 });
 
-User.hasOne(user_dashboard, {
-    foreignKey:'user_id'
-});
-
-user_dashboard.belongsTo(User, {
+workout.belongsTo(User, {
     foreignKey: 'user_id'
 });
-//******** End User Associations *********//
-//********  Workout & Catalog Associations *********//
-
-catalog.hasMany(workout, {
+//Is this right?
+workout.belongsToMany(user_profile, {
+    foreignKey: 'workout_id'
+});
+//or this
+workout.belongsTo(user_profile,{
     foreignKey: 'workout_id'
 });
 
-catalog.belongsTo(User, {
+User.hasOne(user_profile, {
+    foreignKey:'user_id'
+});
+
+user_profile.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-//Not Sure about this one
-workout.belongsToMany(User, {
-    through: catalog,
-    foreignKey: 'user_id'
+user_profile.hasMany(workout, {
+    foreignKey: 'workout_id'
 });
 
-// workout.hasMany(exerciseList, {
-//     foreignKey:
-// })
 
-//******** End Workout & Catalog Associations *********//
-//******** Exercise Associations *********//
+workout.hasMany(exercise, {
+    foreignKey: 'exercise_id'
+});
+
+exercise.belongsToMany(workout, {
+    foreignKey: 'exercise_id'
+});
+
+
 
 
 
