@@ -1,6 +1,6 @@
 const {Model, DataTypes } = require('sequelize');
 const { FOREIGNKEYS } = require('sequelize/types/query-types');
-const sequelize = require('../../config/connection');
+const sequelize = require('../config/connection');
 
 //Create our Exercise model
 class Exercise extends Model {}
@@ -21,20 +21,21 @@ Exercise.init(
     description: {
         type: DataTypes.CHAR,
     },
-    //references exercise base which holds all info about exercise
-    ex_base_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'base',
-            key: 'id'
-        }
+    ex_type: {
+        type: DataTypes.CHAR,
+        allowNull: false, 
+    },
+    ex_img: {
+        //can store url or local route here to reference 
+        //Josh mentioned this in the zoom call
+        //Is useful to add here so that when calling this Exercise Instance we can grab the IMG aswell
+        type: DataTypes.STRING,
     }
 },
 {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: false,
     underscored: true,
     modelName: 'exercise'
 }

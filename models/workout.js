@@ -28,12 +28,21 @@ Workout.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-  },
-
+    //Getting STRING with a FUNCTION to find choosen EXERCISES
+    //and sending to this excerciseList Attribute as an ARRAY
+    excercise_id: {
+      type: DataTypes.ARRAY,
+      references: {
+        model: 'exercise',
+        key: 'id'
+      }
+    }
+},
 {
+    //connect exerciseList here
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: false,
     underscored: true,
     modelName: 'workout'
 }
