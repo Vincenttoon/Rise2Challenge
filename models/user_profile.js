@@ -45,7 +45,7 @@ User_profile.init(
     },
     weight: {
       type: DataTypes.INTEGER,
-    }
+    },
   },
 {
   sequelize,
