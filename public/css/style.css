@@ -101,14 +101,14 @@ footer {
 
 .side-bar-head {
     text-decoration: underline;
-    color:#696969;
+    color:#B87200;
     font-size: 20px;
     padding:20px;
 }
 
 .side-bar-sub-head {
     text-decoration: underline;
-    color:#696969;
+    color:#B87200;
     padding:10px;
 }
 
@@ -132,6 +132,8 @@ footer {
     margin-top: 20px;
     text-decoration: underline;
     margin-bottom: 15px;
+    font-style: italic;
+    color:#026700;
 }
 
 .result-return {
@@ -143,4 +145,126 @@ footer {
 
 .return-text {
     margin-top: 12px;
+}
+
+.public-head {
+    padding: 15px;
+    text-decoration: underline;
+    font-style: italic;
+    color: #B87200;
+}
+
+.result-return-public {
+    background-color: #B1BED5;
+    border-style: solid;
+    border-color: #026700;
+}
+
+.public-date {
+    margin-bottom: 30px;
+}
+
+.yp-head {
+    padding: 15px;
+    font-style: italic;
+    color: #B87200;
+}
+
+.yp-info {
+    margin-top: 40px;
+}
+
+.fav-btn {
+    margin-top: 15px;
+    background-color: #026700;
+    color: #DFDFDF;
+}
+
+.fav-btn:hover {
+    background-color: #B87200;
+}
+
+.delete-btn {
+    margin-top: 15px;
+    background-color: #AD1F39;
+    color: #DFDFDF;
+}
+
+.delete-btn:hover {
+    background-color: #DFDFDF;
+    color:#AD1F39;
+}
+
+.new-workout-span {
+    margin-top: 30px;
+}
+
+.counter {
+    margin-top: 10px;
+    color: #1D13AD;
+}
+
+.user-info-cont {
+    border-style: solid;
+    border-top: #DFDFDF;
+    border-right: #DFDFDF;
+    border-left: #DFDFDF;
+    border-color: #1D13AD;
+    margin-bottom: 15px;
+}
+
+.counter-cont {
+    border-style: solid;
+    border-top: #DFDFDF;
+    border-right: #DFDFDF;
+    border-left: #DFDFDF;
+    border-color:#B87200;
+}
+
+.single-post-user-info {
+    margin-top: 20px;
+}
+
+.comment-form {
+ margin-top: 25px;
+ margin-bottom: 25px;
+}
+.comment-area {
+    width: 95%;
+    height: 100px;
+}
+
+.comment-btn {
+    margin-top: 25px;
+}
+
+.comment-fav-btn {
+    margin-left: 25px;
+    background-color: #026700;
+    color:#DFDFDF;
+}
+
+.comment-fav-btn:hover {
+    background-color: #B87200;
+}
+
+.comments-cont {
+    background-color: #BFD8D5;
+    border-style: solid;
+    border-color: #B87200;
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+.comment {
+    background-color:#DFDFDF;
+}
+
+.comment-date {
+    background-color: #BFD8D5;
+    
+}
+
+.ctxt-txt {
+    margin-top: 10px;
 }
