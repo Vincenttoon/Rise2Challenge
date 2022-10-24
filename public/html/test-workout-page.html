@@ -74,13 +74,25 @@
           </label>
           </div>
          </div>
+
+           <div id="hide-workout" class="hide-workout">
+             <div class="create-workout d-flex flex-wrap justify-content-around">
+              <input type="text" placeholder="Workout name" class="create-workout-input">
+              <button type="submit" class="btn create-workout-submit">Submit</button>
+             </div>
+           </div>
+
+         <div class="create-workout-cont d-flex flex-wrap justify-content-around">
+            <p class="create-txt">Don't see your workout?</p>
+            <button type="button" id="create-workout" class="btn create-workout-btn">Click here</button>
+         </div>
      
         <div class="side-bar-sub-head text-center">
           <h5>Exercise Type:</h5>
         </div>
         <div class="multi-selector-2">
           <div class="select-field-2">
-     <input type="text" name="" placeholder="Choose workouts" id="" class="input-selector">
+     <input type="text" name="" placeholder="Choose exercises" id="" class="input-selector">
           <span class="down-arrow-2">&blacktriangledown;</span>
           </div>
      <!---------List of checkboxes and options----------->
@@ -111,12 +123,26 @@
           </label>
           </div>
          </div>
+
+         <div id="hide-exercise" class="hide-exercise">
+          <div class="create-exercise d-flex flex-wrap justify-content-around">
+           <input type="text" placeholder="Exercise name" class="create-exercise-input">
+           <button type="submit" class="btn create-exercise-submit">Submit</button>
+          </div>
+        </div>
+
+         <div class="create-workout-cont d-flex flex-wrap justify-content-around">
+          <p class="create-txt">Don't see your exercise?</p>
+          <button type="button" id="create-exercise" class="btn create-exercise-btn">Click here</button>
+       </div>
         <div class="side-bar-sub-head text-center">
             <div class="submit-btn-cont">
               <button type="submit" class="btn btn-lg submit-btn">Submit</button>
             </div>
         </div>
       </div>
+
+      <!-- where results copying starts -->
         <div class="container text-center results-cont">
           <h4 class="result-head">Your Selected workout</h4>
           <div class="d-flex flex-wrap justify-content-around result-return">
