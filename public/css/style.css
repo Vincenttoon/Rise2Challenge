@@ -280,28 +280,29 @@ input{
     outline: none;
     border: none;
 }
-.multi-selector{
+.multi-selector, .multi-selector-2{
     width: max-content;
+    margin: auto;
 }
-.select-field{
+.select-field, .select-field-2{
     border: 1px solid rgb(187, 187, 187);
 }
-.select-field,.task,.list{
+.select-field, .select-field-2, .task,.task-2, .list, .list-2{
     width: 100%;
     background-color: white;
     padding: 0.3rem;
 }
-.list{
+.list, .list-2 {
     box-shadow: 0 30px 60px rgb(0,0,0,0.2);
     display: none;
 }
-.down-arrow{
+.down-arrow, .down-arrow-2{
     font-size: 1.2rem;
     display: inline-block;
     cursor: pointer;
     transition: 0.2s linear;
 }
-.task{
+.task, .task-2{
     display: block;
     padding-left: 0;
 }
@@ -310,7 +311,15 @@ input{
     font-size: 0.6rem;
     padding-top: 6px;
 }
+.task-2 span{
+    float: right;
+    font-size: 0.6rem;
+    padding-top: 6px;
+}
 .task:hover{
+    background-color: aliceblue;
+}
+.task-2:hover{
     background-color: aliceblue;
 }
 .show{
@@ -318,4 +327,19 @@ input{
 }
 .rotate180{
     transform: rotate(-60deg);
+}
+
+.submit-btn-cont {
+    padding: 3%
+}
+
+.submit-btn {
+    background-color: #1D13AD;
+    color: #DFDFDF;
+    width: 70%;
+}
+
+.submit-btn:hover {
+    background-color: #DFDFDF;
+    color: #1D13AD;
 }
