@@ -111,5 +111,23 @@ router.post('/', (req, res) => {
 // });
 
 //Delete workout
+router.delete('/:id', (req, res) => {
+  Workout.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbWorkoutData => {
+      if (!dbWorkoutData) {
+        res.status(404).json({ message: 'No workout found with this id' });
+        return;
+      }
+      res.json(dbWorkoutData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
