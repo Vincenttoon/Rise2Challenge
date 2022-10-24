@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inserted link's -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Rise2Challenge</title>
+</head>
+
+
+<header>
+  <div class="main-header-div container-fluid d-flex justify-content-between">
+      <div>
+          <h1>
+            Rise 2 Challenge
+          </h1>
+      </div>
+      <div>
+          <nav>
+            <a class="nav-a" href="/workouts">Workout</a>
+            <a class="nav-a" href="/credits">Public</a>
+            <a class="nav-a" href="/yourpage">Your Page</a>
+            <button type="button" id="logout" class="btn btn-sm logout-btn">Logout</button>
+          </nav>
+      </div>
+  </div>
+</header>
+
+<body>
+  <div class="container d-flex col-12 main-cont">
+    <div class="col-4 side-bar justify-content-center">
+        <div class="side-bar-head align-items-center text-center">
+          <h4 class="byw-head">Build your workout:</h4>
+        </div>
+
+        <!-- with form input -->
+        <div class="side-bar-sub-head text-center">
+          <h5>Workout Type:</h5>
+        </div>
+        <div class="multi-selector">
+          <div class="select-field">
+            <input type="text" name="" placeholder="Choose workouts" id="" class="input-selector">
+            <span class="down-arrow">&blacktriangledown;</span>
+          </div>
+     <!---------List of checkboxes and options----------->
+          <div class="list">
+              <form class="workout-form">
+                <label for="workout-task" class="workout-task">
+                  <input type="checkbox" name="" id="task1">
+                   Arms
+                            </label>
+                            <label for="workout-task" class="workout-task">
+                   <input type="checkbox" name="" id="task2">
+                   Legs
+                            </label>
+                            <label for="workout-task" class="workout-task">
+                   <input type="checkbox" name="" id="task3">
+                   Chest
+                            </label>
+                            <label for="workout-task" class="workout-task">
+                   <input type="checkbox" name="" id="task4">
+                   Back
+                            </label>
+                            <label for="workout-task" class="workout-task">
+                  <input type="checkbox" name="" id="task4">
+                  Shoulders
+                            </label>
+                            <label for="workout-task" class="workout-task">
+                  <input type="checkbox" name="" id="task4">
+                  Endurance
+                            </label>
+                          </div>
+              </form>
+         </div>
+
+           <div id="hide-workout" class="hide-workout">
+             <div class="create-workout d-flex flex-wrap justify-content-around">
+              <input type="text" placeholder="Workout name" class="create-workout-input">
+              <button type="submit" class="btn create-workout-submit">Submit</button>
+             </div>
+           </div>
+
+         <div class="create-workout-cont d-flex flex-wrap justify-content-around">
+            <p class="create-txt">Don't see your workout?</p>
+            <button type="button" id="create-workout" class="btn create-workout-btn">Click here</button>
+         </div>
+     
+        <div class="side-bar-sub-head text-center">
+          <h5>Exercise Type:</h5>
+        </div>
+        <div class="multi-selector-2">
+          <div class="select-field-2">
+            <input type="text" name="" placeholder="Choose exercises" id="" class="input-selector">
+            <span class="down-arrow-2">&blacktriangledown;</span>
+          </div>
+     <!---------List of checkboxes and options----------->
+     <!-- Without form input -->
+          <div class="list-2">
+            <label for="exercise-task" class="exercise-task">
+                 <input type="checkbox" name="" id="task1">
+                 Bicep Curls
+            </label>
+            <label for="exercise-task" class="exercise-task">
+                 <input type="checkbox" name="" id="task2">
+                 Squats
+            </label>
+            <label for="exercise-task" class="exercise-task">
+                 <input type="checkbox" name="" id="task3">
+                 Bench Press
+            </label>
+            <label for="exercise-task" class="exercise-task">
+                 <input type="checkbox" name="" id="task4">
+                 Flies
+            </label>
+            <label for="exercise-task" class="exercise-task">
+                <input type="checkbox" name="" id="task4">
+                Shoulder Workout
+            </label>
+            <label for="exercise-task" class="exercise-task">
+                <input type="checkbox" name="" id="task4">
+                Running
+            </label>
+          </div>
+         </div>
+
+         <div id="hide-exercise" class="hide-exercise">
+          <div class="create-exercise d-flex flex-wrap justify-content-around">
+           <input type="text" placeholder="Exercise name" class="create-exercise-input">
+           <button type="submit" class="btn create-exercise-submit">Submit</button>
+          </div>
+        </div>
+
+         <div class="create-workout-cont d-flex flex-wrap justify-content-around">
+          <p class="create-txt">Don't see your exercise?</p>
+          <button type="button" id="create-exercise" class="btn create-exercise-btn">Click here</button>
+       </div>
+        <div class="side-bar-sub-head text-center">
+            <div class="submit-btn-cont">
+              <button type="submit" class="btn btn-lg submit-btn">Submit</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- where results copying starts -->
+        <div class="container text-center results-cont">
+          <h4 class="result-head">Your Selected workout</h4>
+          <div class="d-flex flex-wrap justify-content-around result-return">
+            <div class="return-text">
+              <h5>Focus:</h5>
+              <p>Arms</p>
+            </div>
+            <div class="return-text">
+              <h5>Exercise Type:</h5>
+              <p>Bicep Curls</p>
+            </div>
+            <div class="return-text">
+              <h5>Intensity:</h5>
+              <p>Standard</p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-around result-return">
+            <div class="return-text">
+              <h5>Focus:</h5>
+              <p>Arms</p>
+            </div>
+            <div class="return-text">
+              <h5>Exercise Type:</h5>
+              <p>Tricep Extensions</p>
+            </div>
+            <div class="return-text">
+              <h5>Intensity:</h5>
+              <p>Standard</p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-around result-return">
+            <div class="return-text">
+              <h5>Focus:</h5>
+              <p>Arms</p>
+            </div>
+            <div class="return-text">
+              <h5>Exercise Type:</h5>
+              <p>Wrist Curls</p>
+            </div>
+            <div class="return-text">
+              <h5>Intensity:</h5>
+              <p>Standard</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center justify-content-end footer-div">
+        <span>
+            <p class="footer-p">Thank you for using Rise2Challenge<br>For more work, checkout our Githubs:</p>
+            <a class="footer-nav" href="kainesgithub.com">Kaine, </a>
+            <a class="footer-nav" href="https://github.com/mamadou1991">Mamadou, </a>
+            <a class="footer-nav" href="https://github.com/JayWhiteBuffalo">Mason, </a>
+            <a class="footer-nav" href="https://github.com/PhuongHoang68">Phuong, </a>
+            <a class="footer-nav" href="https://github.com/Vincenttoon">Vincent</a>
+        </span>
+    </div>
+</footer>
+
+<script src="../javascript/dropdown.js"></script>
+</body>

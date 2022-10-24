@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { user, exercise, workout } = require('../../models');
+const { User, Exercise, Workout } = require('../../models');
 const withAuth = require("../../utils/auth");
 
 // get all exercise
 router.get('/', (req, res) => {
-    exercise.findAll({
+    Exercise.findAll({
       attributes: ['id', 'ex_name', 'intensity', 'ex_type', 'ex_img'],
     })
       .then(dbExerciseData => res.json(dbExerciseData))
