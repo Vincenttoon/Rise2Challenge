@@ -13,9 +13,9 @@ workout.belongsTo(User, {
     foreignKey: 'user_id'
 });
 //Is this right?
-workout.belongsToMany(user_profile, {
-    foreignKey: 'workout_id'
-});
+// workout.belongsToMany(user_profile, {
+//     foreignKey: 'workout_id'
+// });
 //or this
 workout.belongsTo(user_profile,{
     foreignKey: 'workout_id'
@@ -38,7 +38,7 @@ workout.hasMany(exercise, {
     foreignKey: 'exercise_id'
 });
 
-exercise.belongsToMany(workout, {
+exercise.belongsTo(workout, {
     foreignKey: 'exercise_id'
 });
 

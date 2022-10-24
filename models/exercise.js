@@ -1,5 +1,4 @@
-const {Model, DataTypes } = require('sequelize');
-const { FOREIGNKEYS } = require('sequelize/types/query-types');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Create our Exercise model

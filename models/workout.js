@@ -31,7 +31,7 @@ Workout.init(
     //Getting STRING with a FUNCTION to find choosen EXERCISES
     //and sending to this excerciseList Attribute as an ARRAY
     excercise_id: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.INTEGER,
       references: {
         model: 'exercise',
         key: 'id'

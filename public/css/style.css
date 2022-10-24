@@ -297,7 +297,7 @@ input{
 .select-field, .select-field-2{
     border: 1px solid rgb(187, 187, 187);
 }
-.select-field, .select-field-2, .task,.task-2, .list, .list-2{
+.select-field, .select-field-2, .workout-task,.exercise-task, .list, .list-2{
     width: 100%;
     background-color: white;
     padding: 0.3rem;
@@ -314,24 +314,24 @@ input{
     cursor: pointer;
     transition: 0.2s linear;
 }
-.task, .task-2{
+.workout-task, .exercise-task{
     display: block;
     padding-left: 0;
 }
-.task span{
+.workout-task span{
     float: right;
     font-size: 0.6rem;
     padding-top: 6px;
 }
-.task-2 span{
+.exercise-task span{
     float: right;
     font-size: 0.6rem;
     padding-top: 6px;
 }
-.task:hover{
+.workout-task:hover{
     background-color: aliceblue;
 }
-.task-2:hover{
+.exercise-task:hover{
     background-color: aliceblue;
 }
 
@@ -391,6 +391,11 @@ input{
 }
 
 .create-workout-submit:hover {
+    background-color: #F4F3F3;
+    color: #026700;
+}
+
+.create-exercise-submit:hover {
     background-color: #F4F3F3;
     color: #026700;
 }
