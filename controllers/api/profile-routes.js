@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User_profile } = require('../../models');
+const { User_profile, User, Workout } = require('../../models');
 const withAuth = require("../../utils/auth");
 
 // GET user profile route
