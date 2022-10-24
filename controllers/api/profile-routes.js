@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { user_profile, user, workout, exercise } = require('../../models');
+const { User_profile, User, Workout, Exercise } = require('../../models');
 const withAuth = require("../../utils/auth");
 
 // GET user profile route
 router.get('/:id', withAuth, (req, res) => {
-    user_profile.findOne({
+    User_profile.findOne({
       where: {
         id: req.params.id
       }
@@ -24,7 +24,7 @@ router.get('/:id', withAuth, (req, res) => {
 
   router.post('/', withAuth, (req, res) => {
     // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
-    user_profile.create({
+    User_profile.create({
       user_id: req.body.user_id,
       age: req.body.age,
       gender: req.body.gender,
@@ -41,7 +41,7 @@ router.get('/:id', withAuth, (req, res) => {
 
 // update User_profile route
 router.put('/:id', withAuth, (req, res) => {
-    user_profile.update(req.body, {
+    User_profile.update(req.body, {
       where: {
         id: req.params.id
       }

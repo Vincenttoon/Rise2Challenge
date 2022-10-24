@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class user_profile extends Model {}
+class User_profile extends Model {}
 
-user_profile.init(
+User_profile.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,7 +24,7 @@ user_profile.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        mode: 'workout',
+        model: 'workout',
         key: 'id'
       }
     },
@@ -56,4 +56,4 @@ user_profile.init(
 }
 );
 
-module.exports = user_profile;
+module.exports = User_profile;

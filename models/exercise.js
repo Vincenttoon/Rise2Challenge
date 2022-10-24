@@ -23,12 +23,6 @@ Exercise.init(
     ex_type: {
         type: DataTypes.CHAR,
         allowNull: false, 
-    },
-    ex_img: {
-        //can store url or local route here to reference 
-        //Josh mentioned this in the zoom call
-        //Is useful to add here so that when calling this Exercise Instance we can grab the IMG aswell
-        type: DataTypes.STRING,
     }
 },
 {

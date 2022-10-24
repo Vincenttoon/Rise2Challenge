@@ -2,10 +2,10 @@ const {Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Create our Exercise model
-class image extends Model {}
+class Image extends Model {}
 
 //Create fields/columns for Exercise model
-image.init(
+Image.init(
     {
     id: {
         type: DataTypes.INTEGER,
@@ -37,4 +37,4 @@ image.init(
 }
 );
 
-module.exports = image;
+module.exports = Image;

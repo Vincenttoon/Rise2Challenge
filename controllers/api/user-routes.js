@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { user, workout, exercise, user_profile } = require('../../models');
+const { User, Workout, Exercise, User_profile } = require('../../models');
 const withAuth = require("../../utils/auth");
   
 
 
 // GET /api/users  
 router.get('/', withAuth, (req, res) => {
-  user.findAll({
+  User.findAll({
     attributes: { exclude: ['password'] }
   })
   .then(dbUserData => res.json(dbUserData))
@@ -19,7 +19,7 @@ router.get('/', withAuth, (req, res) => {
 
 // GET /api/users/1
 router.get('/:id', withAuth, (req, res) => {
-  user.findOne({
+  User.findOne({
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
@@ -42,7 +42,7 @@ router.get('/:id', withAuth, (req, res) => {
 // POST /api/users
 router.post('/', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-    user.create({
+    User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
 
 //POST log-in route
 router.post('/login', withAuth, (req, res) => {
-  user.findOne({
+  User.findOne({
     where: {
       email: req.body.email
     }
@@ -106,7 +106,7 @@ router.post('/logout', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-  user.update(req.body, {
+  User.update(req.body, {
     where: {
       id: req.params.id
     }
@@ -126,7 +126,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
-  user.destroy({
+  User.destroy({
     where: {
       id: req.params.id
     }
