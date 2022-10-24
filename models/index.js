@@ -1,10 +1,10 @@
 const User = require('./User');
-const user_profile = require('./user_profile');
+const User_profile = require('./user_profile');
 const workout = require('./workout');
-const exercise = require('./exercise');
+const Exercise = require('./Exercise');
 
 
-//******** Associations *********//
+// ******** Associations *********//
 User.hasMany(workout, {
     foreignkey: 'user_id'
 });
@@ -12,11 +12,12 @@ User.hasMany(workout, {
 workout.belongsTo(User, {
     foreignKey: 'user_id'
 });
-//Is this right?
-// workout.belongsToMany(user_profile, {
-//     foreignKey: 'workout_id'
-// });
-//or this
+// Is this right?
+workout.belongsToMany(User, {
+    through: user_profile,
+    foreignKey: 'workout_id'
+});
+// //or this
 workout.belongsTo(user_profile,{
     foreignKey: 'workout_id'
 });
@@ -34,13 +35,16 @@ user_profile.hasMany(workout, {
 });
 
 
-workout.hasMany(exercise, {
+workout.hasMany(Exercise, {
     foreignKey: 'exercise_id'
 });
 
-exercise.belongsTo(workout, {
+Exercise.belongsToMany(user_profile, {
+    through: workout,
     foreignKey: 'exercise_id'
 });
+
+module.exports = {User, User_profile, workout, Exercise};
 
 
 

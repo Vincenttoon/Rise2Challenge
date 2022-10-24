@@ -20,23 +20,19 @@ Workout.init(
         key:'id'
       }
     },
-    exercise_list: {
+    name: {
       type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: false
     },
     //Getting STRING with a FUNCTION to find choosen EXERCISES
-    //and sending to this exerciseList Attribute as an ARRAY
-    exercise_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'exercise',
-        key: 'id'
-      }
-    }
+    //and sending to this excerciseList Attribute as an ARRAY
+    // exercise_list: {
+    //   type: DataTypes.ARRAY(DataTypes.INTEGER),
+    //   references: {
+    //     model: 'Exercise',
+    //     key: 'id'
+    //   }
+    // }
 },
 {
     //connect exerciseList here

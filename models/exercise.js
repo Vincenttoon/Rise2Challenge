@@ -1,4 +1,4 @@
-const {Model, DataTypes} = require('sequelize');
+const {Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Create our Exercise model
@@ -13,11 +13,11 @@ Exercise.init(
         primaryKey: true,
         autoIncrement: true
         },
-    name: {
+    ex_name: {
         type: DataTypes.CHAR,
         allowNull: false
         },
-    description: {
+    intensity: {
         type: DataTypes.CHAR,
     },
     ex_type: {
