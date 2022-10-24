@@ -1,18 +1,18 @@
 const router = require('express').Router();
-const { User, Exercise, User_profile } = require('../../models');
-const Workout = require('../../models/workout');
+const { user, exercise, user_profile } = require('../../models');
+const workout = require('../../models/workout');
 
 // get all Workouts
 router.get('/', (req, res) => {
-    Workout.findAll({
+    workout.findAll({
       attributes: ['id', 'user_id', 'name', 'exercise_list'],
       include: [
         {
-          model: User,
+          model: user,
           attributes: ['id', 'username', 'email']
         },
         {
-          mode: Exercise,
+          mode: exercise,
           attributes: ['id', 'name', 'description', 'ex_type', 'ex_img']
         }
       ]
@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
       exList: "[1,3,5,7]"
     }
     */
-    Workout.create(req.body)
+    workout.create(req.body)
       .then((workout) => {
         // we need to create array with those user chosen exercise
         if(req.body.exList.length) {

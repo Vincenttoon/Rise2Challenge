@@ -1,4 +1,4 @@
 const router = require('express').Router();
-const { User_profile, User, Workout } = require('../../models');
+const { user_profile, user, workout, exercise } = require('../../models');
 
 module.exports = router;
