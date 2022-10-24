@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-    color:#026700;
+    color:#B87200;
 }
 
 button {
@@ -94,6 +94,11 @@ footer {
     color:#1D13AD;
 }
 
+.logout-btn:hover {
+    background-color: #B87200;
+    color: #DFDFDF;
+}
+
 .main-cont {
     margin-bottom: 0%;
     padding-bottom: 0%;
@@ -111,6 +116,11 @@ footer {
     color:#B87200;
     font-size: 20px;
     padding:20px;
+}
+
+.byw-head{
+    color:#1D13AD;
+    font-size: 30px;
 }
 
 .side-bar-sub-head {
@@ -294,6 +304,8 @@ input{
 }
 .list, .list-2 {
     box-shadow: 0 30px 60px rgb(0,0,0,0.2);
+    max-height: 200px;
+    overflow: auto;
     display: none;
 }
 .down-arrow, .down-arrow-2{
@@ -334,9 +346,7 @@ input{
 .show{
     display: block;
 }
-.hide{
-    display: none;
-}
+
 .rotate180{
     transform: rotate(-60deg);
 }
