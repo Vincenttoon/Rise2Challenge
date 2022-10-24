@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const userRoutes = require('./user-routes.js');
+const userRoutes = require('./user-routes');
 const profileRoutes = require('./profile-routes')
 const exerciseRoutes = require('./exercise-routes');
 const workoutRoutes = require('./workout-routes');

@@ -13,11 +13,11 @@ exercise.init(
         primaryKey: true,
         autoIncrement: true
         },
-    name: {
+    ex_name: {
         type: DataTypes.CHAR,
         allowNull: false
         },
-    description: {
+    intensity: {
         type: DataTypes.CHAR,
     },
     ex_type: {
