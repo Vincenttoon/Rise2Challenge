@@ -1,0 +1,40 @@
+const {Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+//Create our Exercise model
+class image extends Model {}
+
+//Create fields/columns for Exercise model
+image.init(
+    {
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+        },
+    //references exercise to attach photo to said exercise
+    exercise_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'exercise',
+            key: 'id'
+        }
+    },
+    isMain: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        }
+    },
+
+{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'base'
+}
+);
+
+module.exports = image;

@@ -1,0 +1,21 @@
+const router = require('express').Router();
+const { User, Exercise, Workout } = require('../../models');
+const withAuth = require("../../utils/auth");
+
+// get all exercise
+router.get('/', (req, res) => {
+    Exercise.findAll({
+      attributes: ['id', 'name', 'description', 'ex_type', 'ex_img'],
+    })
+      .then(dbExerciseData => res.json(dbExerciseData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+//get one exercise
+
+//get selected exercise list
+
+module.exports = router;

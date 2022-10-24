@@ -1,12 +1,11 @@
 const {Model, DataTypes } = require('sequelize');
-const { FOREIGNKEYS } = require('sequelize/types/query-types');
 const sequelize = require('../config/connection');
 
 //Create our Exercise model
-class Exercise extends Model {}
+class exercise extends Model {}
 
 //Create fields/columns for Exercise model
-Exercise.init(
+exercise.init(
     {
     id: {
         type: DataTypes.INTEGER,
@@ -41,4 +40,4 @@ Exercise.init(
 }
 );
 
-module.exports = Exercise;
+module.exports = exercise;
