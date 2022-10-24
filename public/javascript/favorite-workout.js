@@ -1,0 +1,1 @@
+// Favorite button moves workouts to top of all personal workouts on your page.
