@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { User, Post, Workout } = require('../../models');
+const { User, Workout, Exercise, User_profile } = require('../../models');
 const withAuth = require("../../utils/auth");
   
 
 
-// GET /api/users
+// GET /api/users  
 router.get('/', withAuth, (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -40,7 +40,7 @@ router.get('/:id', withAuth, (req, res) => {
 
 
 // POST /api/users
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
       username: req.body.username,

@@ -24,7 +24,7 @@ User_profile.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        mode: 'workout',
+        model: 'workout',
         key: 'id'
       }
     },
