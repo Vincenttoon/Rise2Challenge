@@ -69,6 +69,15 @@ router.get("/build-workout", (req, res) => {
   res.render('workout');
 });
 
+router.get("/your-page", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('your-page');
+});
+
 router.get('/user-info', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
