@@ -24,14 +24,12 @@ Workout.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
-    //Getting STRING with a FUNCTION to find choosen EXERCISES
-    //and sending to this excerciseList Attribute as an ARRAY
     // exercise_list: {
-    //   type: DataTypes.ARRAY(DataTypes.INTEGER),
-    //   references: {
-    //     model: 'Exercise',
-    //     key: 'id'
-    //   }
+    // type: DataTypes.ARRAY(DataTypes.INTEGER),
+    // references: {
+    // model: 'exercise',
+    // key: 'id'
+    // }
     // }
 },
 {

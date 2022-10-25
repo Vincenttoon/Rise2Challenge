@@ -56,13 +56,11 @@ router.get("/:id", (req, res) => {
 });
 
 // test post
-// POST /api/users
+// POST /api/workout
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   Workout.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
+    name: req.body.name,
   })
   .then(dbWorkoutData => {
     req.session.save(() => {
