@@ -38,7 +38,7 @@ Workout.init(
     //connect exerciseList here
     sequelize,
     timestamps: false,
-    freezeTableName: false,
+    freezeTableName: true,
     underscored: true,
     modelName: 'workout'
 }
