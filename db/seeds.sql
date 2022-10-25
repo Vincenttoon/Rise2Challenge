@@ -1,5 +1,5 @@
 
-INSERT INTO exercises (ex_name, intensity, ex_type)
+INSERT INTO exercise (ex_name, intensity, ex_type)
 VALUES
   ('Deadlift', 'High', 'Full body');
 
