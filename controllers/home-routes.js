@@ -40,20 +40,6 @@ router.get('/user-info', (req, res) => {
 
 });
 
-router.post('/user-info', (req, res) => {
-  User_profile.create({
-    age: req.body.age,
-    gender: req.body.gender,
-    height: req.body.height,
-    weight: req.body.weight
-  })
-  then((dbUPdata) => res.json(dbUPdata))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  })
-});
-
 //get login page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
