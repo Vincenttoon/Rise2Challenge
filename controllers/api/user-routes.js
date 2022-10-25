@@ -65,11 +65,11 @@ router.post('/', (req, res) => {
 router.post('/login', withAuth, (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'No user with that username address!' });
       return;
     }
 
