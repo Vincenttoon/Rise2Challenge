@@ -64,6 +64,17 @@ footer {
     margin: auto;
 }
 
+.user-info-div {
+    padding: 2%;
+    width: 40%;
+    margin: auto;
+}
+
+.user-info-head {
+    margin: auto;
+    padding-top: 2%;
+}
+
 .input-title {
     background-color: #BFD8D5;
 }
@@ -400,4 +411,42 @@ input{
 .create-exercise-submit:hover {
     background-color: #F4F3F3;
     color: #026700;
+}
+
+@media screen and (max-width: 350px) {
+    .user-info-div {
+        width: 100%;
+    }
+
+    .input-div {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 575px) { 
+    .user-info-div {
+        width: 80%;
+    }
+
+    .input-div {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .user-info-div {
+        width: 60%;
+    }
+
+    .side-bar-head {
+        padding: 10px;
+    }
 }
