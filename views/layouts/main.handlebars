@@ -23,7 +23,7 @@
         </div>
         <div>
             <nav>
-              <a class="nav-a" href="/credits">Public</a>
+              <a class="nav-a" href="/">Public</a>
               {{#if loggedIn}}
               <a class="nav-a" href="/workouts">Workout</a>
               <a class="nav-a" href="/yourpage">Your Page</a>
@@ -55,5 +55,6 @@
   </footer>
 
   {{#if loggedIn}}
-  <script src="/javascript/logout.js"
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
