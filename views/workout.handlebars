@@ -8,61 +8,12 @@
         <div class="side-bar-sub-head text-center">
           <h5>Focus:</h5>
         </div>
-        <div class="multi-selector">
-          <div class="select-field">
-            <input type="text" name="" placeholder="Choose Focus" id="" class="input-selector">
-            <span class="down-arrow">&blacktriangledown;</span>
-          </div>
-     <!---List of checkboxes and options--->
-          <div class="list">
-                <label for="workout-task" class="workout-task">
-                  <input type="checkbox" class="workout-checkbox" name="" id="task1">
-                   Arms
-                </label>
-                <label for="workout-task" class="workout-task">
-                   <input type="checkbox" class="workout-checkbox" name="" id="task2">
-                   Legs
-                </label>
-                <label for="workout-task" class="workout-task">
-                   <input type="checkbox" class="workout-checkbox" name="" id="task3">
-                   Chest
-                </label>
-                <label for="workout-task" class="workout-task">
-                   <input type="checkbox" class="workout-checkbox" name="" id="task4">
-                   Full Body
-                </label>
-                <label for="workout-task" class="workout-task">
-                  <input type="checkbox" class="workout-checkbox" name="" id="task4">
-                  Cardio
-                </label>
-            </div>
-         </div>
+        {{> focus}}
      
         <div class="side-bar-sub-head text-center">
           <h5>Intensity:</h5>
         </div>
-        <div class="multi-selector-2">
-          <div class="select-field-2">
-            <input type="text" name="" placeholder="Choose Intensity" id="" class="input-selector">
-            <span class="down-arrow-2">&blacktriangledown;</span>
-          </div>
-     <!---List of checkboxes and options--->
-     <!-- Without form input -->
-          <div class="list-2">
-                <label for="workout-task" class="workout-task">
-                  <input type="checkbox" class="workout-checkbox" name="" id="task1">
-                   High
-                </label>
-                <label for="workout-task" class="workout-task">
-                   <input type="checkbox" class="workout-checkbox" name="" id="task2">
-                   Medium
-                </label>
-                <label for="workout-task" class="workout-task">
-                   <input type="checkbox" class="workout-checkbox" name="" id="task3">
-                   Low
-                </label>
-          </div>
-         </div>
+        {{> intensity}}
 
         <div class="side-bar-sub-head text-center">
             <div class="submit-btn-cont">
@@ -73,6 +24,8 @@
         <div id="hide-workout" class="hide-workout">
              <div class="create-workout d-flex flex-wrap justify-content-around">
               <input type="text" placeholder="Workout name" class="create-workout-input">
+              {{> create-focus}}
+              {{> create-intensity}}
               <button type="submit" class="btn create-workout-submit">Submit</button>
              </div>
            </div>
@@ -87,6 +40,7 @@
         <div class="container col-12 col-md-10 col-lg-7 text-center results-cont">
           <h4 class="result-head">Your Selected workout</h4>
           <div class="d-flex flex-wrap justify-content-around result-return">
+            {{!-- in here --}}
 
             {{!-- classes you could use to style cards --}}
 

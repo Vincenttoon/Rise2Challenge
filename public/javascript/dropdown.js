@@ -12,6 +12,20 @@ document.querySelector('.select-field-2').addEventListener('click',()=>{
 
 });
 
+// toggles exercise dropdown
+document.querySelector('.select-field-3').addEventListener('click',()=>{
+    document.querySelector('.list-3').classList.toggle('show');
+    document.querySelector('.down-arrow-3').classList.toggle('rotate180');
+
+});
+
+// toggles exercise dropdown
+document.querySelector('.select-field-4').addEventListener('click',()=>{
+    document.querySelector('.list-4').classList.toggle('show');
+    document.querySelector('.down-arrow-4').classList.toggle('rotate180');
+
+});
+
 // toggles create workout field
 document.querySelector('.create-workout-btn').addEventListener('click', ()=>{
     document.querySelector('.hide-workout').classList.toggle('show');
