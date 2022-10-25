@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 const {User, User_profile} = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get('/:id', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     User_profile.findOne({
       where: {
         id: req.session.id

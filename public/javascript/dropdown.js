@@ -12,11 +12,6 @@ document.querySelector('.select-field-2').addEventListener('click',()=>{
 
 });
 
-// toggles create exercise field
-document.querySelector('.create-exercise-btn').addEventListener('click', ()=>{
-    document.querySelector('.hide-exercise').classList.toggle('show');
-});
-
 // toggles create workout field
 document.querySelector('.create-workout-btn').addEventListener('click', ()=>{
     document.querySelector('.hide-workout').classList.toggle('show');
@@ -27,11 +22,4 @@ document.querySelector('.create-workout-submit').addEventListener('click', ()=> 
     document.querySelector('.hide-workout').classList.toggle('show');
 
     // Push new workout to Workout data workout.name
-});
-
-// should submit data to exercise database and toggle create exercise visibility
-document.querySelector('.create-exercise-submit').addEventListener('click', ()=> {
-        // Push new workout to Workout data workout.name
-
-    document.querySelector('.hide-exercise').classList.toggle('show');
 });
