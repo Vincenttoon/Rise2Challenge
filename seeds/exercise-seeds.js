@@ -9,7 +9,7 @@ const exerciseData = [
     {
         ex_name: 'Squats',
         intensity: 'High',
-        ex_type: 'Lower Body'
+        ex_type: 'Legs'
     },
     {
         ex_name: 'Jogging',
