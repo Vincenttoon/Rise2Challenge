@@ -60,4 +60,22 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/build-workout", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('workout');
+});
+
+router.get('/user-info', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('user-info')
+});
+
   module.exports = router;

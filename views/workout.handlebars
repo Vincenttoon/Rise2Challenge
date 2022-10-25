@@ -1,0 +1,91 @@
+<div class="container d-flex flex-wrap col-12 main-cont">
+    <div class="col-12 col-lg-4 side-bar justify-content-center">
+        <div class="side-bar-head align-items-center text-center">
+          <h4 class="byw-head">Build your workout:</h4>
+        </div>
+
+        <!-- with form input -->
+        <div class="side-bar-sub-head text-center">
+          <h5>Focus:</h5>
+        </div>
+        <div class="multi-selector">
+          <div class="select-field">
+            <input type="text" name="" placeholder="Choose workouts" id="" class="input-selector">
+            <span class="down-arrow">&blacktriangledown;</span>
+          </div>
+     <!---List of checkboxes and options--->
+          <div class="list">
+            {{#each exercise}}
+                <div class="multi-selector_item">
+                    <label for="{{this.id}}" class="workout-task">
+                      <input type="checkbox" class="workout-checkbox" name="" id="{{this.id}}">
+                       {{this}}
+                    </label>
+                </div>
+            {{/each}}
+            </div>
+         </div>
+     
+        <div class="side-bar-sub-head text-center">
+          <h5>Exercise Type:</h5>
+        </div>
+        <div class="multi-selector-2">
+          <div class="select-field-2">
+            <input type="text" name="" placeholder="Choose exercises" id="" class="input-selector">
+            <span class="down-arrow-2">&blacktriangledown;</span>
+          </div>
+     <!---List of checkboxes and options--->
+     <!-- Without form input -->
+          <div class="list-2">
+            {{#each exercise}}
+                    <label for="{{this.intensity}}" class="exercise-task">
+                        <input type="checkbox" class="exercise-checkbox"  name="" id="{{this.id}}">
+                        {{this.intensity}}
+                    </label>
+            {{/each}}
+          </div>
+         </div>
+
+        <div class="side-bar-sub-head text-center">
+            <div class="submit-btn-cont">
+              <button type="submit" class="btn btn-lg submit-btn">Submit</button>
+            </div>
+        </div>
+
+        <div id="hide-workout" class="hide-workout">
+             <div class="create-workout d-flex flex-wrap justify-content-around">
+              <input type="text" placeholder="Workout name" class="create-workout-input">
+              <button type="submit" class="btn create-workout-submit">Submit</button>
+             </div>
+           </div>
+
+         <div class="create-workout-cont d-flex flex-wrap justify-content-around">
+            <p class="create-txt">Don't see your workout?</p>
+            <button type="button" id="create-workout" class="btn create-workout-btn">Click here</button>
+         </div>
+      </div>
+
+      <!-- where results copying starts -->
+        <div class="container col-12 col-md-10 col-lg-7 text-center results-cont">
+          <h4 class="result-head">Your Selected workout</h4>
+          <div class="d-flex flex-wrap justify-content-around result-return">
+            <div class="return-text">
+              <h5>Workout:</h5>
+              <p class="workout-return">Arms</p>
+            </div>
+            <div id="return-text">
+              <h5>Exercise Type:</h5>
+              <p id="exercise-return">Bicep Curls</p>
+            </div>
+            <div class="return-text">
+              <h5>Intensity:</h5>
+              <p id="intensity-return">Standard</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/javascript/dropdown.js"></script>

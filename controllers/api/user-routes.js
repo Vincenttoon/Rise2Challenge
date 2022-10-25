@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 
 
 // GET /api/users  
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
   })
