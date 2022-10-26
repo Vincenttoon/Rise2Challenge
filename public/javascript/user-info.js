@@ -7,7 +7,7 @@ async function userInfoFormHandler(event) {
     const weight = document.querySelector("#weight-signup").value.trim();
     const gender = document.querySelector('#gender-signup').value.trim();
   
-    if (age && height && weight && email) {
+    if (age && height && weight && gender) {
       const response = await fetch("/api/profile", {
         method: "post",
         body: JSON.stringify({
@@ -30,5 +30,5 @@ async function userInfoFormHandler(event) {
 }
 
 document
-  .querySelector(".UI-form")
+  .querySelector(".signup-form")
   .addEventListener("submit", userInfoFormHandler);
