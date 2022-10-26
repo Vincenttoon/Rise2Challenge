@@ -1,5 +1,5 @@
 const User = require('./user');
-const User_workout = require('./user_workout');
+const User_workout = require('./user-workout');
 const Workout = require('./workout');
 const Workout_exercise = require('./workout_exercise');
 const Exercise = require('./exercise.js');
