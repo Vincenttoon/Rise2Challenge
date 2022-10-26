@@ -5,21 +5,21 @@ const exphbs = require('express-handlebars');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3309;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-	secret: process.env.Secret,
-	cookie: {
-		expires: 1200000,
-	},
-	resave: false,
-	saveUninitialized: true,
-	store: new SequelizeStore({
-		db: sequelize,
-	}),
+    secret: 'Super secret secret',
+    cookie: {
+      expires: 1200000
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
 };
 
 app.use(session(sess));
