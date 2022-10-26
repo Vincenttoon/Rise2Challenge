@@ -1,26 +1,24 @@
 //contain all user-facing routes, such as homepage and login page
 
-
 //setting up main homepage
-const router = require("express").Router();
-const sequelize = require("../config/connection");
-const {user, workout, user_profile, exercise} = require("../models");
-
+const router = require('express').Router();
+const sequelize = require('../config/connection');
+const { user, workout, User_workout, exercise } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log(req.session);
-  
-    // other logic...
-  });
+	console.log(req.session);
+
+	// other logic...
+});
 
 //get login page
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
+	if (req.session.loggedIn) {
+		res.redirect('/');
+		return;
+	}
 
-  module.exports = router;
+	res.render('login');
+});
+
+module.exports = router;
