@@ -5,34 +5,31 @@ const Workout_exercise = require("./workout_exercise")
 const Exercise = require("./exercise.js");
 
 // ******** Associations *********//
-User.hasMany(Workout, {
+User.belongsToMany(Workout, {
+  through: User_profile,
   foreignkey: "user_id",
 });
 
-Workout.belongsTo(User, {
-  foreignKey: "user_id",
-});
-// Is this right?
+// Workout.belongsTo(User, {
+//   foreignKey: "user_id",
+// });
+
 Workout.belongsToMany(User, {
   through: User_profile,
   foreignKey: "workout_id",
 });
-// //or this
-Workout.belongsTo(User_profile, {
-  foreignKey: "workout_id",
-});
 
-User.hasOne(User_profile, {
-  foreignKey: "user_id",
-});
+// User.hasOne(User_profile, {
+//   foreignKey: "user_id",
+// });
 
-User_profile.belongsTo(User, {
-  foreignKey: "user_id",
-});
+// User_profile.belongsTo(User, {
+//   foreignKey: "user_id",
+// });
 
-User_profile.hasMany(Workout, {
-  foreignKey: "workout_id",
-});
+// User_profile.hasMany(Workout, {
+//   foreignKey: "workout_id",
+// });
 
 Exercise.belongsTo(Workout, {
   through: Workout_exercise,

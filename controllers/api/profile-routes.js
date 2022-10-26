@@ -29,7 +29,7 @@ router.get('/:id', withAuth, (req, res) => {
       age: req.body.age,
       gender: req.body.gender,
       height: req.body.height,
-      weight: req.body.weight
+      weight_in_lbs: req.body.weight_in_lbs,
     })
       .then(dbUserProfileData => res.json(dbUserProfileData))
       .catch(err => {

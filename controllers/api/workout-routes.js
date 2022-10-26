@@ -1,20 +1,20 @@
 const router = require("express").Router();
-const { User, Exercise, User_profile } = require("../../models");
+const { User, Exercise, User_profile, Workout_exercise } = require("../../models");
 const Workout = require("../../models/Workout");
 
 // get all Workouts
 router.get("/", (req, res) => {
   Workout.findAll({
-    attributes: ["id", "user_id", "name", "exercise_list"],
+    //attributes: ["id", "user_id", "name"],
     include: [
       {
-        model: User,
-        attributes: ["id", "username", "email"],
+        model: User_profile,
+        attributes: ["id", "user_id"],
       },
       {
-        mode: Exercise,
-        attributes: ["id", "name", "description", "ex_type"],
-      },
+        model: Exercise,
+        through: Workout_exercise
+      }
     ],
   })
     .then((dbWorkoutData) => res.json(dbWorkoutData))
@@ -30,15 +30,15 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ["id", "user_id", "name", "exercise_list"],
+    attributes: ["id", "user_id", "name"],
     include: [
       {
         model: User,
         attributes: ["id", "username", "email"],
       },
       {
-        mode: Exercise,
-        attributes: ["id", "name", "description", "ex_type"],
+        model: Exercise, 
+        through: Workout_exercise
       },
     ],
   })
@@ -58,22 +58,28 @@ router.get("/:id", (req, res) => {
 // test post
 // POST /api/workout
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  Workout.create({
-    name: req.body.name,
-  })
-  .then(dbWorkoutData => {
-    req.session.save(() => {
-      req.session.user_id = dbWorkoutData.id;
-      req.session.username = dbWorkoutData.username;
-      req.session.loggedIn = true;
-  
-      res.json(dbWorkoutData);
+  Workout.create(req.body)
+    .then((workout) => {
+      // if there's product tags, we need to create pairings to bulk create in the ProductTag model
+      if (req.body.exerciseIds.length) {
+        const workoutExerciseIdArr = req.body.exerciseIds.map((exercise_id) => {
+          return {
+            workout_id: workout.id,
+            exercise_id,
+          };
+        });
+        return Workout_exercise.bulkCreate(workoutExerciseIdArr);
+      }
+      res.status(200).json(workout);
+    })
+    .then((workoutExerciseIds) => res.status(200).json(workoutExerciseIds))
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
     });
-  })
+});
   
 
-    });
 
 //Create New Workout
 // router.post('/', (req, res) => {
