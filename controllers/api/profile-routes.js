@@ -40,7 +40,7 @@ router.post('/', withAuth, (req, res) => {
 
 // update User_workout route
 router.put('/:id', withAuth, (req, res) => {
-	User_workout.update(req.body, {
+	UserWorkout.update(req.body, {
 		where: {
 			id: req.params.id,
 		},
