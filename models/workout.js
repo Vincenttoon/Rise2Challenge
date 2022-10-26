@@ -24,6 +24,9 @@ Workout.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
+    workout: {
+      type: DataTypes.JSON,
+    },
     // exercise_list: {
     // type: DataTypes.ARRAY(DataTypes.INTEGER),
     // references: {
