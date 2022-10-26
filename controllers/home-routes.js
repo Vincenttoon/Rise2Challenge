@@ -8,7 +8,7 @@ const {User, Workout, User_profile, Exercise} = require("../models");
 
 router.get('/', (req, res) => {
     Workout.findAll({
-      attributes: ['id', 'user_id', 'name'],
+      attributes: ['id', 'name', 'workout'],
       include: [
         {
           model: Exercise,
@@ -33,10 +33,6 @@ router.get('/', (req, res) => {
       res.status(500).json;
     });
     // other logic...
-});
-
-router.get('/user-info', (req, res) => {
-
 });
 
 //get login page
@@ -75,15 +71,6 @@ router.get("/your-page", (req, res) => {
   }
 
   res.render('your-page');
-});
-
-router.get('/user-info', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-  }
-
-  res.render('user-info')
 });
 
   module.exports = router;
