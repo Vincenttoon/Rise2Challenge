@@ -1,4 +1,4 @@
-const User = require('./user');
+const User = require('./User');
 const UserWorkout = require('./UserWorkout');
 const Workout = require('./workout');
 const WorkoutExercise = require('./WorkoutExercise');
