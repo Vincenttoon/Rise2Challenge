@@ -62,7 +62,10 @@ router.get("/build-workout", (req, res) => {
     return;
   }
 
-  res.render("workout", { loggedIn: req.session.loggedIn });
+  Exercise.findAll().then((dbExerciseData) => {
+    const exercises = dbExerciseData.map((exercise) => exercise.get({ plain: true }));
+    res.render("workout", {exercises, loggedIn: req.session.loggedIn});
+  });
 });
 
 router.get("/your-page", (req, res) => {

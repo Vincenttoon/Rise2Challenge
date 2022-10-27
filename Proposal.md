@@ -5,7 +5,7 @@
 Team Contact Info
 Vince
     Phone: 618-972-9547
-    Github: https://github.com/kainew5843
+    Github: https://github.com/Vincenttoon
 Mamadou
     Phone: 9018570478
     Github: https://github.com/mamadou1991
