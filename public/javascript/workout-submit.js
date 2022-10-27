@@ -58,7 +58,7 @@ const post = {
     exerciseIds: exIds
 }
 
-fetch('http://127.0.0.1:3001/api/workout', {
+fetch('/api/workout', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -103,7 +103,9 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         }
     });
     //for results into a JSON obj
-    const pump = {
+    const pre_pump = {
+
+
         //workoutName: document.querySelector('.return-text').value,
         ex_type: selectedFocus,
 
@@ -111,12 +113,14 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         intensity: selectedExerciseName,
     };
 
-    console.log(pump.ex_type[0]);
+    const pumpType = pre_pump.ex_type.toString();
+    const pumpInt = pre_pump.intensity.toString();
+
     
 
 
 //send request to GET match results from backend 
-fetch('http://127.0.0.1:3001/api/exercise', {
+fetch('/api/exercise', {
     method: 'GET',
     headers:{
         'Content-type': 'application/json',
@@ -127,9 +131,10 @@ fetch('http://127.0.0.1:3001/api/exercise', {
     console.log(allEx)
     const exList = allEx.filter((exercise) => 
     {
-        for (let i = 0; i < allEx.length; i++){
-        return exercise.ex_type === pump.ex_type[i] && exercise.intensity === pump.intensity[i]
-        }
+        // for (let i = 0; i < allEx.length; i++){
+        return exercise.ex_type === pumpType && exercise.intensity === pumpInt
+        // return exercise.ex_type === pump.ex_type[i] && exercise.intensity === pump.intensity[i]
+        // }
     })
     function displayEx() {
     console.log(allEx)
@@ -138,12 +143,12 @@ fetch('http://127.0.0.1:3001/api/exercise', {
     
     for (let i = 0; i < allEx.length; i++){
     
-    console.log(exList)
-    console.log(exList[i].id)
+    // console.log(exList)
+    // console.log(exList[i].id)
     let Container = document.getElementById('exCont');
     const exCard = document.createElement('div');
     exCard.classList.add('d-flex', 'flex-wrap' ,'justify-content-around', 'result-return','hover');
-    exCard.setAttribute('id',exList[i].id);
+    // exCard.setAttribute('id',exList[i].id);
     exCard.onclick = function(){
         if(exCard.classList.contains('select')){
         exCard.classList.remove('select')
@@ -154,15 +159,15 @@ fetch('http://127.0.0.1:3001/api/exercise', {
     
     const exType = document.createElement('h3');
     exType.classList.add('return-text');
-    exType.innerText = exList[i].ex_type;//put array obj data here
+    exType.innerText = allEx[i].ex_type;//put array obj data here
             
     const exInt = document.createElement('h3');
     exInt.classList.add('return-text');
-    exInt.innerText = exList[i].intensity;//put array obj data here
+    exInt.innerText = allEx[i].intensity;//put array obj data here
 
     const exName= document.createElement('h3');
     exName.classList.add('return-text');
-    exName.innerText = exList[i].ex_name;//put array obj data here
+    exName.innerText = allEx[i].ex_name;//put array obj data here
 
     Container.appendChild(exCard);
     exCard.appendChild(exType);
@@ -183,3 +188,4 @@ document
 document
 .querySelector(".submit-btn")
 .addEventListener("click", handleSubmit);
+console.log(handleSubmit);
