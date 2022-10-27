@@ -3,7 +3,7 @@
 
 function workoutSaveBar () {
 
-    const headerCont = document.getElementById('result-head');
+    const headerCont = document.querySelector('.result-head');
 
     const workoutNameCont = document.createElement('div')
     const workoutNameInput = document.createElement('input')
@@ -25,15 +25,14 @@ function workoutSubmit () {
    Arr = [];
    wArr = [];
    let selectedEx = (document.querySelectorAll(".select"))
-   console.log(selectedEx);
    selectedEx.forEach((selected) => {
     Arr.push(selected)
    })
    for (let i = 0; i < Arr.length; i++){
-   let wType = Arr[i].firstChild.innerText
-   let wInt = Arr[i].lastChild.innerText
-   let wName = Arr[i].children[1].innerText
-   let id = Arr[i].id
+   let wType = Arr[i].childNodes[1].innerText
+   let wInt = Arr[i].childNodes[3].innerText
+   let wName = Arr[i].childNodes[2].innerText
+   let id = Arr[i].childNodes[0].innerText
    let newWorkoutObject = new Object();
    newWorkoutObject = {
     "id" : id,
@@ -43,11 +42,13 @@ function workoutSubmit () {
    };
 
 
-
+   console.log(Arr)
    wArr.push(newWorkoutObject)
 
 }
+
 console.log(wArr)
+
 let exIds = wArr.map(s=>s.id)
 console.log(exIds)
 let workout = document.getElementById('workoutName').value;
@@ -55,7 +56,7 @@ let workout = document.getElementById('workoutName').value;
 
 const post = {
     name: workout,
-    exerciseIds: exIds
+    exArr: exIds
 }
 
 fetch('/api/workout', {
@@ -64,7 +65,7 @@ fetch('/api/workout', {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-    body:JSON.stringify(post)})
+    body:post})
     .then(function(response){
         return response.json()
     })
@@ -75,16 +76,9 @@ fetch('/api/workout', {
 
 
 
-
-//fetch exercises from arr using exercise_id
-//post return to workout db
-
-
 const handleSubmit = (event) => {
     
-//if exercise cards already displayed clear them
-//wripe arrays if already existing
-//log results for checked focus section
+
 const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
     const selectedFocus = [];
 //push to array
@@ -103,7 +97,7 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         }
     });
     //for results into a JSON obj
-    const pre_pump = {
+    const pump = {
 
 
         //workoutName: document.querySelector('.return-text').value,
@@ -113,11 +107,11 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         intensity: selectedExerciseName,
     };
 
-    const pumpType = pre_pump.ex_type.toString();
-    const pumpInt = pre_pump.intensity.toString();
+     const pumpType = pump.ex_type.toString();
+     const pumpInt = pump.intensity.toString();
 
     
-
+console.log(pump);
 
 //send request to GET match results from backend 
 fetch('/api/exercise', {
@@ -156,7 +150,10 @@ fetch('/api/exercise', {
         else{
         exCard.classList.add('select');
     }}
-    
+    const exId = document.createElement('p');
+    exId.classList.add('return-text');
+    exId.innerText = allEx[i].id;
+
     const exType = document.createElement('h3');
     exType.classList.add('return-text');
     exType.innerText = allEx[i].ex_type;//put array obj data here
@@ -170,6 +167,7 @@ fetch('/api/exercise', {
     exName.innerText = allEx[i].ex_name;//put array obj data here
 
     Container.appendChild(exCard);
+    exCard.appendChild(exId);
     exCard.appendChild(exType);
     exCard.appendChild(exName);
     exCard.appendChild(exInt);
@@ -188,4 +186,4 @@ document
 document
 .querySelector(".submit-btn")
 .addEventListener("click", handleSubmit);
-console.log(handleSubmit);
+
