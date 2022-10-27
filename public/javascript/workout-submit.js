@@ -25,40 +25,41 @@ function workoutSubmit () {
    Arr = [];
    wArr = [];
    let selectedEx = (document.querySelectorAll(".select"))
-   console.log(selectedEx);
    selectedEx.forEach((selected) => {
     Arr.push(selected)
    })
    for (let i = 0; i < Arr.length; i++){
-   let wType = Arr[i].firstChild.innerText
-   let wInt = Arr[i].lastChild.innerText
-   let wName = Arr[i].children[1].innerText
-   let id = Arr[i].id
+   let wType = Arr[i].childNodes[1].innerText
+   let wInt = Arr[i].childNodes[3].innerText
+   let wName = Arr[i].childNodes[2].innerText
+   let id = Arr[i].childNodes[0].innerText
    let newWorkoutObject = new Object();
    newWorkoutObject = {
+    "id" : id,
     "name" : wName,
     "ex_type": wType,
     "intensity" : wInt
    };
 
 
-
+   console.log(Arr)
    wArr.push(newWorkoutObject)
 
 }
+
 console.log(wArr)
-var workoutJSON = JSON.stringify(wArr);
-console.log(workoutJSON)
-let workoutJSON1 = workoutJSON.replace('[', "")
-let workout = workoutJSON1.replace(']'," ")
-console.log(workout)
+
+let exIds = wArr.map(s=>s.id)
+console.log(exIds)
+let workout = document.getElementById('workoutName').value;
 
 
 const post = {
     name: workout,
+    exArr: exIds
 }
 
-fetch('http://127.0.0.1:3000/api/workout', {
+fetch('/api/workout', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -96,7 +97,7 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         }
     });
     //for results into a JSON obj
-    const pre_pump = {
+    const pump = {
 
 
         //workoutName: document.querySelector('.return-text').value,
@@ -106,14 +107,14 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
         intensity: selectedExerciseName,
     };
 
-    const pumpType = pre_pump.ex_type.toString();
-    const pumpInt = pre_pump.intensity.toString();
+     const pumpType = pump.ex_type.toString();
+     const pumpInt = pump.intensity.toString();
 
     
-
+console.log(pump);
 
 //send request to GET match results from backend 
-fetch('http://127.0.0.1:3000/api/exercise', {
+fetch('/api/exercise', {
     method: 'GET',
     headers:{
         'Content-type': 'application/json',
@@ -149,7 +150,10 @@ fetch('http://127.0.0.1:3000/api/exercise', {
         else{
         exCard.classList.add('select');
     }}
-    
+    const exId = document.createElement('p');
+    exId.classList.add('return-text');
+    exId.innerText = allEx[i].id;
+
     const exType = document.createElement('h3');
     exType.classList.add('return-text');
     exType.innerText = allEx[i].ex_type;//put array obj data here
@@ -163,6 +167,7 @@ fetch('http://127.0.0.1:3000/api/exercise', {
     exName.innerText = allEx[i].ex_name;//put array obj data here
 
     Container.appendChild(exCard);
+    exCard.appendChild(exId);
     exCard.appendChild(exType);
     exCard.appendChild(exName);
     exCard.appendChild(exInt);
