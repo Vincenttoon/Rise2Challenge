@@ -57,7 +57,9 @@ A workout tracker where you can choose your exercise focus and intensity and bui
 
 ## Bugs
 
-* PUT BUGS HERE !!!
+* Workout page loads all workouts. Had selections ironed out in a development branch, but merging of branches/application of handlebars broke the JS code.
+
+* No public or personal workouts loading to application.
 
 ## Contributors
 
