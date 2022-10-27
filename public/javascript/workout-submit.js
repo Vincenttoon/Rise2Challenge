@@ -34,9 +34,9 @@ function workoutSubmit () {
    let wInt = Arr[i].lastChild.innerText
    let wName = Arr[i].children[1].innerText
    let id = Arr[i].id
+   let id = Arr[i].id
    let newWorkoutObject = new Object();
    newWorkoutObject = {
-    "id" : id,
     "name" : wName,
     "ex_type": wType,
     "intensity" : wInt
@@ -48,14 +48,15 @@ function workoutSubmit () {
 
 }
 console.log(wArr)
-let exIds = wArr.map(s=>s.id)
-console.log(exIds)
-let workout = document.getElementById('workoutName').value;
+var workoutJSON = JSON.stringify(wArr);
+console.log(workoutJSON)
+let workoutJSON1 = workoutJSON.replace('[', "")
+let workout = workoutJSON1.replace(']'," ")
+console.log(workout)
 
 
 const post = {
     name: workout,
-    exerciseIds: exIds
 }
 
 fetch('http://127.0.0.1:3001/api/workout', {
@@ -64,7 +65,7 @@ fetch('http://127.0.0.1:3001/api/workout', {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-    body:JSON.stringify(post)})
+    body:post})
     .then(function(response){
         return response.json()
     })
@@ -75,16 +76,9 @@ fetch('http://127.0.0.1:3001/api/workout', {
 
 
 
-
-//fetch exercises from arr using exercise_id
-//post return to workout db
-
-
 const handleSubmit = (event) => {
     
-//if exercise cards already displayed clear them
-//wripe arrays if already existing
-//log results for checked focus section
+
 const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
     const selectedFocus = [];
 //push to array
