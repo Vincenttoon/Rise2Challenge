@@ -3,7 +3,7 @@
 
 function workoutSaveBar () {
 
-    const headerCont = document.getElementById('result-head');
+    const headerCont = document.querySelector('.result-head');
 
     const workoutNameCont = document.createElement('div')
     const workoutNameInput = document.createElement('input')
@@ -34,7 +34,6 @@ function workoutSubmit () {
    let wInt = Arr[i].lastChild.innerText
    let wName = Arr[i].children[1].innerText
    let id = Arr[i].id
-   let id = Arr[i].id
    let newWorkoutObject = new Object();
    newWorkoutObject = {
     "name" : wName,
@@ -59,7 +58,7 @@ const post = {
     name: workout,
 }
 
-fetch('/api/workout', {
+fetch('http://127.0.0.1:3000/api/workout', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -114,7 +113,7 @@ const focusCheckboxes = document.querySelectorAll('.workout-checkbox');
 
 
 //send request to GET match results from backend 
-fetch('/api/exercise', {
+fetch('http://127.0.0.1:3000/api/exercise', {
     method: 'GET',
     headers:{
         'Content-type': 'application/json',
@@ -182,4 +181,4 @@ document
 document
 .querySelector(".submit-btn")
 .addEventListener("click", handleSubmit);
-console.log(handleSubmit);
+
