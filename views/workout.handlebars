@@ -1,4 +1,5 @@
 <div class="container d-flex flex-wrap col-12 main-cont">
+  {{log exercises}}
     <div class="col-12 col-lg-4 side-bar justify-content-center">
         <div class="side-bar-head align-items-center text-center">
           <h4 class="byw-head">Build your workout:</h4>
@@ -37,8 +38,8 @@
       </div>
 
       <!-- where results copying starts -->
-        <div class="container col-12 col-md-10 col-lg-7 text-center results-cont">
-          <h4 class="result-head">Your Selected workout</h4>
+        <div id="exCont" class="container col-12 col-md-10 col-lg-7 text-center results-cont">
+          <h4 class="result-head" id="result-head">Your Selected workout</h4>
           <div class="d-flex flex-wrap justify-content-around result-return">
             {{!-- in here --}}
 
@@ -64,5 +65,5 @@
   </div>
 
   <script src="/javascript/dropdown.js"></script>
-  <scirpt src="/javascript/workout-submit.js"></scirpt>
+  <script src="/javascript/workout-submit.js"></script>
   <script src="/javascript/post-workout.js"></script>
