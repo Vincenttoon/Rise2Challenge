@@ -49,6 +49,8 @@ A workout tracker where you can choose your exercise focus and intensity and bui
 
 ## Future Improvements
 
+* Retry this application with ReactJS. Would likely make the code functionality much smoother.
+
 * Make the page more social, by adding comments and shared favorites
 
 * Further aesthetic improvements
